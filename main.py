@@ -4,7 +4,7 @@ import itertools
 
 def indented_input():
     line = input("... ")
-    if line == "":#press single enter
+    if line == "" or line==")":#press single enter
         return line
     else:
         line += indented_input()
@@ -16,7 +16,7 @@ def myinput(count):
     firstline = input('In [{}]: '.format(count))
     output += firstline
 
-    if firstline.endswith(":"):
+    if firstline.endswith(":") or firstline.endswith("("):
         output += indented_input()
 
     return output
